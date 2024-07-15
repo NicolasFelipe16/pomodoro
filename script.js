@@ -52,10 +52,8 @@ let start_button = document.querySelector('.pomodoro__button');
 start_button.addEventListener('click', startPomodoro);
 
 function startPomodoro() {
-    timeSettings();
-
-    let pomodoro_time = document.querySelector('.pomodoro__time');
     console.log('Pomodoro iniciado.');
+    let pomodoro_time = document.querySelector('.pomodoro__time');
 
     function formatTime(value) {
         if (value < 10) {
@@ -66,24 +64,20 @@ function startPomodoro() {
     }
 
     let time_boxes_classes = ['box-01', 'box-02', 'box-03'];
-    // let time_boxes_duration = [24, 4, 14];
-    let time_boxes_duration = [1, 1, 1];
+    let time_boxes_duration = [24, 4, 14];
 
     let time_box_index = 0;
 
     let minutes = time_boxes_duration[time_box_index];
-    // let seconds = 60;
-    let seconds = 5;
+    let seconds = 60;
 
     setInterval(function () {
         if (seconds === 0 && minutes === 0) {
             time_box_index++;
             minutes = time_boxes_duration[time_box_index];
-            // seconds = 60;
-            seconds = 5;
+            seconds = 60;
         } else if (seconds === 0) {
-            // seconds = 60;
-            seconds = 5;
+            seconds = 60;
             minutes--;
         }
         
@@ -91,10 +85,8 @@ function startPomodoro() {
         let active_box = time_boxes_classes[time_box_index];
         changeActiveTimeBox(active_box);
         
-
         pomodoro_time.innerHTML = formatTime(minutes) + ":" + formatTime(seconds);
-    //  }, 1000)
-     }, 500)
+     }, 1000)
 }
 
 // startPomodoro();

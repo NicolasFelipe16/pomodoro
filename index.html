@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>Pomodoro</title>
+</head>
+
+<body>
+    <main>
+        <span class="settings-icon"><i class="bi bi-gear-fill"></i></span>
+        <div class="pomodoro">
+            <h2 class="pomodoro__title">Pomodoro</h2>
+            <div class="pomodoro__time-boxes">
+                <h2 class="box-01 active-box">Foco</h2>
+                <h2 class="box-02">Pausa curta</h2>
+                <h2 class="box-03">Pausa longa</h2>
+            </div>
+            <h2 class="pomodoro__message">Vamos iniciar o foco?</h2>
+            <h2 class="pomodoro__time">25:00</h2>
+            <input class="pomodoro__button" type="button" value="Iniciar">
+        </div>
+        <div class="settings rotated">
+            <h2 class="settings__title">Configurações</h2>
+            <div class="input-box">
+                <input type="number" id="focus-duration" name="focus-duration" value="25" placeholder="25">
+                <label for="focus-duration">Duração do foco (min)</label>
+            </div>
+            <div class="input-box">
+                <input type="number" id="short-break-duration" name="short-break-duration" value="5" placeholder="5">
+                <label for="short-break-duration">Duração do intervalo curto (min)</label>
+            </div>
+            <div class="input-box">
+                <input type="number" id="long-break-duration" name="long-break-duration" value="15" placeholder="15">
+                <label for="long-break-duration">Duração do intervalo longo (min)</label>
+            </div>
+            <div class="input-box">
+                <input type="number" id="short-break-quantity" name="short-break-quantity" value="4" placeholder="4">
+                <label for="short-break-quantity">Quantidade de focos para a pausa longa</label>
+            </div>
+            <div class="input-box">
+                <input type="checkbox" class="settings__checkbox" name="autostart" id="autostart" checked>   
+                <label for="autostart"></label>
+                <h2>Começar automaticamente</h2>
+            </div>
+            <input class="settings__button" type="button" value="Salvar">
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
